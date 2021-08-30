@@ -2,7 +2,7 @@
 const lampada = document.getElementById("lampada")
 
 function lampadaInteira(){
-    return !(lampada.src.includes("quebrada"))
+    return !lampada.src.includes("quebrada")
 
 }
 
@@ -15,14 +15,17 @@ function botoesLigaDesliga(estadoLiga, estadoDesliga){
 }
 
 function ligarLampada() {
- 
+        if (lampadaInteira()){
     lampada.src="img/ligada.jpg"
     botoesLigaDesliga(true, false)
+        }
 }
 
 function desligarLampada(){
+         if (lampadaInteira()){
     lampada.src="img/desligada.jpg"
     botoesLigaDesliga(false, true)
+}
 }
 
 function quebrarLampada(){
